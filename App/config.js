@@ -1,5 +1,5 @@
 const prefix = '';
-const apiURL = "localhost:3000/api/";
+const apiURL = "http://localhost:3000/api/";
 const HTTP_RESOURCES = {
     BASE: prefix + "Api/",
     AUTH: apiURL + "auth/"
@@ -58,7 +58,7 @@ const HTTP_RESOURCES = {
 
     }
 
-    ]);;
+    ]);
 
 })();
 
