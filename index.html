@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-strict-di>
+<head>
+    <base href="weatherFront">
+    <meta charset="utf-8">
+    <title>weather</title>
+    <meta name="theme-color" content="#4f81bd">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href='//fonts.googleapis.com/css?family=Roboto|Roboto+Condensed'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-loading-bar/src/loading-bar.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/ng-notify/dist/ng-notify.min.css">
+
+    <!-- Angular -->
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
+
+    <script src="node_modules/satellizer/dist/satellizer.min.js"></script>
+
+    <!-- Angular + -->
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-loading-bar/src/loading-bar.js"></script>
+    <script src="node_modules/ng-notify/dist/ng-notify.min.js"></script>
+
+
+
+    <script src="App/mainModule.js"></script>
+    <script src="App/home/homeModule.js"></script>
+
+    <!-- Services -->
+    <script src="App/_Services/services_module.js"></script>
+    <script src="App/_Services/storage_service.js"></script>
+    <script src="App/_Services/messaging_service.js"></script>
+    <script src="App/_Services/forecast_service.js"></script>
+
+    <!-- Directives -->
+    <script src="App/_Directives/directives_module.js"></script>
+
+    <!-- Auth -->
+    <script src="App/Authentication/authentication_module.js"></script>
+    <script src="App/Authentication/authentication_service.js"></script>
+    <script src="App/Authentication/AuthenticationCtrl.js"></script>
+
+
+    <!-- App -->
+    <script src="App/home/homeCtrl.js"></script>
+
+    <script src="App/config.js"></script>
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+
+
+</head>
+<body>
+
+
+<div data-ng-app="weatherFront.main" data-ng-view>
+</div>
+
+</body>
+</html>
