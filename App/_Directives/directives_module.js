@@ -2,6 +2,22 @@
     angular.module("weatherFront.directives", []);
 })();
 
+angular.module("weatherFront.directives").directive('forecastItem', function() {
+    return {
+        require: "ngModel",
+        restrict: 'E',
+        scope: {
+            forecast_info: '=info'
+        },
+        templateUrl: "App/_Directives/templates/forecastItem.html",
+        controller: ['$scope', function($scope) {
+
+
+
+        }]
+
+    };
+});
 
 
 angular.module("weatherFront.directives").directive('searchBar', function() {
@@ -27,17 +43,6 @@ angular.module("weatherFront.directives").directive('searchBar', function() {
                 },function (err) {
                     
                 });
-
-
-                // myscope.forecastArr = [{a:1}, {a:2}];
-                // function assign(){
-                //     myscope.forecastArr = [{a:1}, {a:2}];
-                //     myscope.loading = false;
-                // }
-                //
-                // setTimeout(assign, 2000);
-
-
             }
         }]
 

@@ -2,7 +2,7 @@
 
     var homeController = function($rootScope, $scope, StorageService, MessagingService, $location, $rootScope){
 
-        $scope.forecastArr = [];
+        $scope.forecastArr = null;
 
 
 

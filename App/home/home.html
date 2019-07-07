@@ -1,4 +1,16 @@
-<div style="width:50%">
-<search-bar forecast="forecastArr"></search-bar>
-<div>{{forecastArr}}</div>
+<div style="height:100%; width:100%; background: white ">
+
+        <div style="width:50%;" >
+
+            <search-bar forecast="forecastArr"></search-bar>
+
+
+        </div>
+    <div ng-show="forecastArr"><h4>Forecast for {{forecastArr.location.name}}</h4></div>
+
+    <div layout="row" layout-align="center center">
+
+        <forecast-item style="width:100%" info="item" ng-repeat="item in forecastArr.forecast"></forecast-item>
+    </div>
+
 </div>

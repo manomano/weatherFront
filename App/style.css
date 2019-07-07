@@ -1,0 +1,11 @@
+.forecast{
+    padding: 10%; border: 1px solid black
+
+}
+
+.forecast > div{
+    width:100%;
+    border:1px solid red;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
