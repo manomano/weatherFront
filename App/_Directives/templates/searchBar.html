@@ -1,16 +1,12 @@
-<md-content layout-gt-sm="row" layout-padding>
-
-    <!--<md-content layout-padding layout="row"  layout-align="start end">-->
-    <div>
+<div layout-align="start" layout-gt-sm="row"  style="background: white">
+    <fieldset>
         <form name="searchForm">
-
-            <md-input-container>
-                <label>city</label>
-                <input required="true" type="text" ng-model="city">
-            </md-input-container>
-            <md-button ng-click="retrieve()" class="md-raised btn-primary">View</md-button>
+            <div>Enter Your city:</div>
+            <input type="text" ng-model = "city" required="true">
+            <button id="searchBtn" ng-click="retrieve()" >View</button>
         </form>
-    </div>
-    <!--</md-content>-->
+    </fieldset>
+</div>
 
-</md-content>
+<!--style="font-family:Arial; font-size:12px; display: inline-block; padding:0; height: 27px; border:1px solid black "-->
+<!--style="font-family:Arial; font-size:12px; display: inline-block; padding:0; height: 27px; background: white; border:1px solid black"-->

@@ -11,6 +11,7 @@
         "weatherFront.services",
         "weatherFront.directives",
         "weatherFront.authentication",
+        "ngCookies",
         "ngMaterial"
     ];
     angular.module("weatherFront.main", dependencies);

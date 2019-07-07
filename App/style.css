@@ -1,11 +1,51 @@
-.forecast{
-    padding: 10%; border: 1px solid black
+fieldset {
+    font-size: 1em;
+    padding: 0.5em 0.5em 0.5em 0;
+    border:0;
+    /*border-radius: 1em;*/
+    font-family: sans-serif;
+}
+fieldset > label, input, button {
+    font-size: inherit;
+    padding: 0.2em;
+    margin: 0.1em 0.2em;
+    /* the following ensures they're all using the same box-model for rendering */
+    -moz-box-sizing: content-box; /* or `border-box` */
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    border: 1px solid black;
+}
 
+.forecast{
+    padding: 10%; border: 1px solid black;
+    margin:0;
+
+}
+
+#searchBtn{
+    width: 100px;
+    background: white;
+
+}
+
+.summary{
+    color: forestgreen;
 }
 
 .forecast > div{
     width:100%;
-    border:1px solid red;
+    border:0px solid red;
     margin: 0 0 10px 0;
     text-align: center;
+    font-size: 11px;
+}
+
+.recentCities{
+    text-align: center;
+    height: 45px;
+    font-family: "Arial Narrow";
+}
+
+.recentCities > a{
+    color:green;
 }

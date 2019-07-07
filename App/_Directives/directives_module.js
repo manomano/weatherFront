@@ -28,7 +28,7 @@ angular.module("weatherFront.directives").directive('searchBar', function() {
             forecastArr: '=forecast'
         },
         templateUrl: "App/_Directives/templates/searchBar.html",
-        controller: ['$scope','forecastService', function($scope, forecastService) {
+        controller: ['$scope', '$rootScope','forecastService', function($scope, $rootScope, forecastService) {
             $scope.city = '';
             $scope.loading = false;
             $scope.retrieve = function () {
@@ -40,6 +40,7 @@ angular.module("weatherFront.directives").directive('searchBar', function() {
                 forecastService.getDailyForecast($scope.city).then(function (response) {
                     myscope.forecastArr = response.data;
                     myscope.loading = false;
+                    $rootScope.$emit('searched',myscope.forecastArr);
                 },function (err) {
                     
                 });

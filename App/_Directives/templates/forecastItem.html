@@ -1,6 +1,8 @@
 <div class="forecast">
     <div>{{forecast_info.date}}</div>
-    <div><span>temp:</span><span>{{forecast_info.temp.day}}/{{forecast_info.temp.night}}</span></div>
+    <div class="summary">{{forecast_info.summary}}</div>
+    <div><span>Temp: </span><span>{{forecast_info.temp.day>0?('+'+forecast_info.temp.day):('+'+forecast_info.temp.day)}}C/
+        {{forecast_info.temp.night>0?('+'+forecast_info.temp.night):('+'+forecast_info.temp.night)}}C</span></div>
     <div><span>wind speed:</span><span>{{forecast_info.wind.speed}}</span></div>
-    <div><span>wind:</span><span>{{forecast_info.wind.direction}}</span></div>
+    <div><span>{{forecast_info.wind.direction}}</span></div>
 </div>

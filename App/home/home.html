@@ -1,16 +1,22 @@
-<div style="height:100%; width:100%; background: white ">
+<div style=" height:90%; width:90%; background: white; padding: 5% 5% ">
 
-        <div style="width:50%;" >
-
-            <search-bar forecast="forecastArr"></search-bar>
-
-
-        </div>
+    <div style=" " >
+        <search-bar forecast="forecastArr"></search-bar>
+    </div>
     <div ng-show="forecastArr"><h4>Forecast for {{forecastArr.location.name}}</h4></div>
 
-    <div layout="row" layout-align="center center">
 
-        <forecast-item style="width:100%" info="item" ng-repeat="item in forecastArr.forecast"></forecast-item>
+    <div layout-xs="column"  layout="row" layout-align="start center" flex>
+        <div class="recentCities" style="border: 0px solid red">Your recent cities: </div>
+        <div style="border: 0px solid red" class="recentCities" ng-repeat="rec in recentSearchesLocal.slice().reverse() track by $index" ng-style="{'margin':'10px'}">
+            <a href="#" ng-click="getRecent($event, rec)" >{{rec["location"].name}}</a>
+        </div>
+    </div>
+
+
+    <div layout-xs="column" layout="row" layout-align="space-between center" flex>
+
+        <forecast-item style="width:30%" info="item" ng-repeat="item in forecastArr.forecast"></forecast-item>
     </div>
 
 </div>

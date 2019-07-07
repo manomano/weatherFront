@@ -1,16 +1,26 @@
 (function() {
 
-    var forecastService = function($auth, http, $location,StorageService) {
+    var forecastService = function($auth, http, $location,StorageService, $rootScope,$cookies) {
 
         this.getDailyForecast = function(city) {
 
             return http.post(apiURL + 'weather/daily/' + city+"/",{allow:true});
         }
 
+        this.loadRecentSearches = function () {
+            let recentSearches = $cookies.get('recentSearches')
+            if(recentSearches){
+                $rootScope.recentSearches = JSON.parse(recentSearches);
+            }else{
+                $rootScope.recentSearches = []
+            }
+
+        }
+
 
 
     }
-    forecastService.$inject =  ["$auth", "$http", "$location","StorageService"];
+    forecastService.$inject =  ["$auth", "$http", "$location","StorageService", "$rootScope", "$cookies"];
 
     angular.module("weatherFront.services").service("forecastService", forecastService);
 
