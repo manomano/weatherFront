@@ -1,0 +1,13 @@
+<div layout-align="start" layout-gt-sm="row"  style="background: white">
+    <fieldset>
+        <form name="searchForm">
+            <div>Enter Your city:</div>
+            <input type="text" ng-model = "city" required="true">
+            <button id="searchBtn" ng-click="retrieve()" >View</button>
+            <span ng-show="loading" class="loading"><i class="fas fa-spinner"></i></span>
+        </form>
+    </fieldset>
+</div>
+
+<!--style="font-family:Arial; font-size:12px; display: inline-block; padding:0; height: 27px; border:1px solid black "-->
+<!--style="font-family:Arial; font-size:12px; display: inline-block; padding:0; height: 27px; background: white; border:1px solid black"-->
