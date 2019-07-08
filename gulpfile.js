@@ -33,6 +33,12 @@ gulp.task('images', function () {
         .pipe(gulp.dest('dist/assets/images'))
 });
 
+gulp.task('copy-html-files', function () {
+    var stream =  gulp.src('./App/**/*.html') // stream source
+        .pipe(gulp.dest('./dist/app/')); // copy to dist/views
+    return stream;
+});
+
 gulp.task("clean", function () {
     var paths = [
         "dist/app",
@@ -43,11 +49,12 @@ gulp.task("clean", function () {
     return del(paths);
 });
 
-gulp.task("pre_build", ["minify", "icons", "fonts", "images"], function () {
+gulp.task("pre_build", gulp.parallel("minify", "icons", "fonts", "images","copy-html-files"), function () {
 
     var options = {
         base: "./"
     };
+
     var sources = [
         "app/*.html",
         "app/**/*.html",
@@ -62,16 +69,24 @@ gulp.task("pre_build", ["minify", "icons", "fonts", "images"], function () {
         .pipe(html_min({
             collapseWhitespace: true
         }))
-        .pipe(gulp.dest("dist"));
-});
-
-gulp.task("build", ["clean"], function () {
-    gulp.start("pre_build");
+        .pipe(gulp.dest("dist/app"));
 });
 
 
 
-gulp.task('webserver', ['watch','build'], function() {
+
+gulp.task("build", gulp.series("clean", "pre_build"), function () {
+    return gulp.start("pre_build");
+
+});
+
+gulp.task('watch', function() {
+    gulp.watch('path/to/file', ['minify']);
+
+    return gulp.watch(['./index.html','./App/*.html','./App/**/*.html', './App/style.css', './App/**/*.js'], ['build']);
+});
+
+gulp.task('webserver', gulp.series('watch','build'), function() {
     gulp.src('.')
         .pipe(webserver({
             livereload: false,
@@ -79,6 +94,6 @@ gulp.task('webserver', ['watch','build'], function() {
             open: "http://localhost:8000/dist/index.html"
         }));
 });
-
-
-//gulp.task('default', ['serve']);
+//
+//
+// //gulp.task('default', ['serve']);
