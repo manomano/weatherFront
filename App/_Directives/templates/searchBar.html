@@ -4,6 +4,7 @@
             <div>Enter Your city:</div>
             <input type="text" ng-model = "city" required="true">
             <button id="searchBtn" ng-click="retrieve()" >View</button>
+            <span ng-show="loading" class="loading"><i class="fas fa-spinner"></i></span>
         </form>
     </fieldset>
 </div>
