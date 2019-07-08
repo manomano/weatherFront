@@ -39,9 +39,9 @@
 
     }
 
-    homeController.$inject = ["$rootScope", "$scope", "forecastService", "MessagingService", "$location","$cookies"];
+    //homeController.$inject = ["$rootScope", "$scope", "forecastService", "MessagingService", "$location","$cookies",homeController];
 
-    angular.module("weatherFront.home").controller("homeCtrl", homeController);
+    angular.module("weatherFront.home").controller("homeCtrl", ["$rootScope", "$scope", "forecastService", "MessagingService", "$location","$cookies",homeController]);
 
 
 })();

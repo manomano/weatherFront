@@ -54,8 +54,8 @@
 
     }
 
-    controller.$inject = ["$scope", "$rootScope", "authService", "$auth", "StorageService", "MessagingService", "$location"];
+    //controller.$inject = ["$scope", "$rootScope", "authService", "$auth", "StorageService", "MessagingService", "$location", controller];
 
-    angular.module("weatherFront.main").controller("MainCtrl", controller);
+    angular.module("weatherFront.main").controller("MainCtrl", ["$scope", "$rootScope", "authService", "$auth", "StorageService", "MessagingService", "$location", controller]);
 
 })();

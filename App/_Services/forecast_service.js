@@ -20,8 +20,8 @@
 
 
     }
-    forecastService.$inject =  ["$auth", "$http", "$location","StorageService", "$rootScope", "$cookies"];
+//    forecastService.$inject =  ["$auth", "$http", "$location","StorageService", "$rootScope", "$cookies",forecastService];
 
-    angular.module("weatherFront.services").service("forecastService", forecastService);
+    angular.module("weatherFront.services").service("forecastService", ["$auth", "$http", "$location","StorageService", "$rootScope", "$cookies",forecastService]);
 
 })();

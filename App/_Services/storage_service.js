@@ -22,7 +22,7 @@
 			$window.sessionStorage.removeItem(key);
 		}
 	}
-	storageService.$inject = ["$window"];
-	angular.module("weatherFront.services").service("StorageService", storageService);
+
+	angular.module("weatherFront.services").service("StorageService", ["$window",storageService]);
 
 })();

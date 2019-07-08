@@ -82,6 +82,6 @@ const HTTP_RESOURCES = {
 
     };
 
-    routeConfig.$inject = ["$routeProvider"]
-    angular.module("weatherFront.main").config(routeConfig);
+    //routeConfig.$inject = ["$routeProvider"]
+    angular.module("weatherFront.main").config(["$routeProvider",routeConfig]);
 })();

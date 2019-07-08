@@ -22,7 +22,7 @@
 
     };
 
-    service.$inject = ["$auth", "$http", "StorageService"];
-    angular.module("weatherFront.authentication").service("authService", service);
+
+    angular.module("weatherFront.authentication").service("authService", ["$auth", "$http", "StorageService",service]);
 
 })();

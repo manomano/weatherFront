@@ -22,6 +22,6 @@
 
     }
 
-    controller.$inject = ["$scope", "authService", "StorageService", "MessagingService", "$location", "ngNotify"];
-    angular.module("weatherFront.authentication").controller("AuthenticationCtrl", controller);
+    //controller.$inject = ["$scope", "authService", "StorageService", "MessagingService", "$location", "ngNotify",controller];
+    angular.module("weatherFront.authentication").controller("AuthenticationCtrl", ["$scope", "authService", "StorageService", "MessagingService", "$location", "ngNotify",controller]);
 })();

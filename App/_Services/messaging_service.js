@@ -18,11 +18,16 @@
 		}
 
 	}
-	messagingService.$inject = [
-		"ngNotify",
-		"$location"
-	];
+	// messagingService.$inject = [
+	// 	"ngNotify",
+	// 	"$location",
+	// 	messagingService
+	// ];
 
-	angular.module("weatherFront.services").service("MessagingService", messagingService);
+	angular.module("weatherFront.services").service("MessagingService", [
+		"ngNotify",
+		"$location",
+		messagingService
+	]);
 
 })();
